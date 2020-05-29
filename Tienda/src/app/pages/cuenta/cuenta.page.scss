@@ -1,0 +1,94 @@
+ion-menu-button {
+	color: var(--ion-color-primary);
+}
+* {
+	font-weight: 300;
+}
+ion-content {
+	// --background: #f1f1f1;
+}
+
+ion-text {
+	position: absolute;
+	top: 25%;
+
+	h1 {
+		font-size: 42px;
+	}
+	p {
+		font-size: 14px;
+	}
+}
+
+.acciones {
+	position: absolute;
+	width: 90%;
+	bottom: 16px;
+}
+
+//Todos los botones
+ion-button {
+	--border-radius: 9px;
+	--box-shadow: none;
+	text-transform: initial;
+	font-size: 12px;
+}
+
+.boton-login {
+	display: flex;
+	justify-content: space-between;
+
+	ion-button {
+		width: 45%;
+		--background: #ffff;
+		--color: #752121;
+		--border-style: solid;
+		--border-color: #eeee;
+		--border-width: 0.5px;
+	}
+	ion-avatar {
+		height: 12px;
+		width: 12px;
+		margin-right: 7px;
+		margin-bottom: 1px;
+	}
+}
+
+.separador {
+	display: flex;
+	justify-content: center;
+	margin: 8px auto 10px;
+	font-size: 12px;
+	position: relative;
+
+	.linea {
+		position: absolute;
+		border-top: 1px solid #dfdfdf;
+		width: 50px;
+		height: 2px;
+		top: 8px;
+	}
+
+	.derecha {
+		right: 98px;
+	}
+	.izquierda {
+		left: 98px;
+	}
+}
+
+.registrate-btn {
+	--background: linear-gradient(90deg, #8c36a5 0%, #664bdc 100%);
+}
+
+.ingresar {
+	text-align: center;
+	font-size: 12px;
+	margin-top: 16px;
+
+	a {
+		color: #8c36a5;
+		font-weight: 400;
+		margin-left: 5px;
+	}
+}

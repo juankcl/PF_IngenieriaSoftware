@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Mi Cuenta</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-content [fullscreen]="true" class="ion-padding">
+    <ion-text>
+      <h1>Bienvenido</h1>
+      <p>Empezemos por iniciar sesión <br>en tu cuenta.</p>
+    </ion-text>
+    <div class="acciones">
+      <div class="boton-login">
+        <ion-button>
+          <ion-avatar>
+            <img src="../../../assets/images/facebook.png" alt="">
+          </ion-avatar>
+          <ion-label>Facebook</ion-label>
+        </ion-button>
+
+        <ion-button>
+          <ion-avatar>
+            <img src="../../../assets/images/google.png" alt="">
+          </ion-avatar>
+          <ion-label>Google</ion-label>
+        </ion-button>
+      </div>
+      <div class="separador">
+        <span>o tambien</span>
+        <span class="linea izquierda"></span>
+        <span class="linea derecha"></span>
+      </div>
+      <ion-button class="registrate-btn" expand="block">Regitrate con Email</ion-button>
+      <p class="ingresar">¿Ya eres usuario? <a href="">Iniciar sesion</a></p>
+    </div>
+  </ion-content>
+</ion-content>
