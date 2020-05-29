@@ -4,19 +4,24 @@
 _Tienda online_
 
 
-Objetivo: Los alumnos desarrollaran una Solución WEB y Móvil donde utilizaran
-conocimientos previos y lo revisado en clase.
+Objetivo: El alumno mostrará los conocimientos adquiridos durante el semestre mediante
+el Desarrollo de una Solución WEB.
+Para el desarrollo del proyecto final se trabajará en equipos de máximo 4 integrantes donde
+deberán de mostrar en que actividad participó cada uno de ustedes. Deberán de desarrollar
+alguno de los siguientes proyectos:
+1. Tienda en Línea: Para esta deberán de contar con los siguientes apartados:
+a. Home: Pantalla de bienvenida y muestran ofertas, o datos importantes de
+su negocio.
+b. Clientes: Podrán registrar su información básica, así como un usuario y
+contraseña para poder acceder a la parte privada del sitio.
+c. Catálogo de Productos: Mostrarán todos los productos que ofrecen, deberá
+de aparecer: imagen del producto, descripción del producto, precio del
+producto (solo clientes registrados podrán acceder a este apartado).
+d. Información de la Tienda: Este apartado es solo información de la tienda,
+pueden anotar algo de historia, sucursales, etc.
+e. Contacto: Deberán de agregar un formulario de contacto para solicitar
+información en específico.
 
-Equipos de 2 personas.
-En este caso los equipos deberán de tener lo siguiente:
-• Portal de Administración: Ustedes como Dueños de la tienda podrán dar de alta
-productos, clientes, seguimiento de pedidos. En este apartado ustedes deberán de
-contemplar todo lo necesario para que tenga un buen funcionamiento, es decir.,
-contemplar los datos y tipos de datos que se deben de almacenar, base de datos,
-etc.
-• Portal de Venta: En este apartado todos los usuarios pueden ver el sitio, pero solo
-los usuarios registrados podrán realizar la compra de productos.
-Es necesario que sus servidores o plataformas donde monten el servicio sea de AWS o Heroku.
 
 _Aplicacion de Tienda con IONC y Angular_
 
