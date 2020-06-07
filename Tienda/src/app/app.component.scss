@@ -58,7 +58,7 @@ ion-menu.md ion-item.selected ion-icon {
 }
 
 ion-menu.md ion-item ion-icon {
-  color: #616e7e;
+  color: #d7d6d6;
 }
 
 ion-menu.md ion-item ion-label {
@@ -116,4 +116,16 @@ ion-note {
 
 ion-item.selected {
   --color: var(--ion-color-primary);
+}
+
+ion-item {
+  --inner-border-width: 0px 0px 0px;
+}
+
+/*Cambiar el ancho del menu en dispositivos mas grandes*/
+@media screen and (min-width: 1096px) {
+  ion-menu {
+    width: 5%;
+    border-right: solid var(--ion-color-step-150) 2px;
+  }
 }

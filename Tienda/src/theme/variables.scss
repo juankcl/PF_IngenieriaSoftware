@@ -191,8 +191,8 @@
    */
 
   .md body {
-    --ion-background-color: #121212;
-    --ion-background-color-rgb: 18,18,18;
+    --ion-background-color: #202020;
+    --ion-background-color-rgb: 32,32,32;
 
     --ion-text-color: #ffffff;
     --ion-text-color-rgb: 255,255,255;
@@ -219,10 +219,28 @@
     --ion-color-step-900: #e7e7e7;
     --ion-color-step-950: #f3f3f3;
 
-    --ion-item-background: #1e1e1e;
+    --ion-item-background: #141414;
 
     --ion-toolbar-background: #1f1f1f;
 
     --ion-tab-bar-background: #1f1f1f;
   }
+}
+
+@font-face {
+  font-family: Muli;
+  src: url('../assets/fonts/muli.woff2');
+}
+
+@font-face {
+  font-family: Comfortaa;
+  src: url('../assets/fonts/comfortaa.woff2');
+}
+
+h1, h2, h3, h4, h5, h6 {
+  --ion-font-family-header : Comfortaa;
+}
+
+* {
+  --ion-font-family: Muli;
 }
