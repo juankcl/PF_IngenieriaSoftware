@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppRoutingModule} from '../../app-routing.module';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-botones-barra',
@@ -7,8 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BotonesBarraComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {}
 
+  carrito(){
+    this.router.navigateByUrl('/carrito');
+  }
+  
+  cuenta(){
+    this.router.navigateByUrl('/cuenta');
+  }
 }
