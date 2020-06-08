@@ -29,6 +29,18 @@ const routes: Routes = [
   {
     path: 'contacto',
     loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
+  },
+  {
+    path: 'inicio-sesion',
+    loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then( m => m.InicioSesionPageModule)
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./pages/perfil/perfil.module').then( m => m.PerfilPageModule)
   }
 
 ];
