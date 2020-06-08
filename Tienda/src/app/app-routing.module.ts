@@ -22,15 +22,15 @@ const routes: Routes = [
 	{
 		path: 'carrito',
 		loadChildren: () => import('./pages/carrito/carrito.module').then((m) => m.CarritoPageModule)
-	},  {
-    path: 'info',
-    loadChildren: () => import('./pages/info/info.module').then( m => m.InfoPageModule)
-  },
-  {
-    path: 'contacto',
-    loadChildren: () => import('./pages/contacto/contacto.module').then( m => m.ContactoPageModule)
-  }
-
+	},
+	{
+		path: 'info',
+		loadChildren: () => import('./pages/info/info.module').then((m) => m.InfoPageModule)
+	},
+	{
+		path: 'contacto',
+		loadChildren: () => import('./pages/contacto/contacto.module').then((m) => m.ContactoPageModule)
+	}
 ];
 
 @NgModule({
