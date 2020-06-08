@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { User, Message } from '../../services/classes';
+import { User, Session } from '../../services/classes';
 import { ToastController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 
@@ -22,8 +22,32 @@ export class InicioSesionPage implements OnInit {
   ngOnInit() {
   }
 
-  login(form: NgForm){
-    console.log(form.value);
+  async presentToast(text: string, color: string = "primary") {
+    const toast = await this.toastController.create({
+      color: color,
+      message: text,
+      duration: 2000
+    });
+    toast.present();
+  }
+
+  login(form: NgForm) {
+    if (form.valid) {
+      console.log(form.value);
+      this.registerSQL.login(form.value).subscribe((response: Session) => {
+        console.log(response);
+        if (response.valid == true) {
+          this.presentToast("Iniciando sesión...", "success");
+          if (response.admin == true) {
+            this.presentToast("Hola admin...", "success");
+          }
+        } else {
+          this.presentToast("Usuario o contraseña incorrecta", "danger");
+        }
+      });
+    } else {
+      this.presentToast("Datos no válidos", "danger");
+    }
   }
 
 }

@@ -11,6 +11,7 @@ export class Message {
 }
 
 export class Session {
+	valid: boolean;
 	userId: number;
 	admin: boolean;
 }
