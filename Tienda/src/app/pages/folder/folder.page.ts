@@ -2,17 +2,29 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-folder',
-  templateUrl: './folder.page.html',
-  styleUrls: ['./folder.page.scss'],
+	selector: 'app-folder',
+	templateUrl: './folder.page.html',
+	styleUrls: [ './folder.page.scss' ]
 })
 export class FolderPage implements OnInit {
-  public folder: string;
+	cosas: Array<any> = [
+		{
+			titulo: 'Perro',
+			color: '#444',
+			precio: 32
+		},
+		{
+			titulo: 'Gato',
+			color: '#999',
+			precio: 12
+		}
+	];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+	public folder: string;
 
-  ngOnInit() {
-    this.folder = this.activatedRoute.snapshot.paramMap.get('id');
-  }
+	constructor(private activatedRoute: ActivatedRoute) {}
 
+	ngOnInit() {
+		this.folder = this.activatedRoute.snapshot.paramMap.get('id');
+	}
 }
