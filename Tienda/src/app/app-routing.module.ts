@@ -25,16 +25,28 @@ const routes: Routes = [
 	},
 	{
 		path: 'info',
-		loadChildren: () => import('./pages/info/info.module').then((m) => m.InfoPageModule)
+		loadChildren: () => import('./pages/info/info.module').then(m => m.InfoPageModule)
 	},
 	{
 		path: 'contacto',
-		loadChildren: () => import('./pages/contacto/contacto.module').then((m) => m.ContactoPageModule)
+		loadChildren: () => import('./pages/contacto/contacto.module').then(m => m.ContactoPageModule)
+	},
+	{
+		path: 'inicio-sesion',
+		loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then(m => m.InicioSesionPageModule)
+	},
+	{
+		path: 'registro',
+		loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule)
+	},
+	{
+		path: 'perfil',
+		loadChildren: () => import('./pages/perfil/perfil.module').then(m => m.PerfilPageModule)
 	}
-];
+]
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

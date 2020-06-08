@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
+import { StorageService } from '../../services/storage.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -8,12 +9,13 @@ import { IonicModule } from '@ionic/angular';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private storageSer: StorageService) { }
 
   ngOnInit() {}
 
   buscar (busqueda: string) {
     console.log(busqueda);
+    this.storageSer.buscar(busqueda);
   }
 
 }
