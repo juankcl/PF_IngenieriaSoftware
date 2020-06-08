@@ -1,7 +1,7 @@
 # PF_IngenieriaSoftware
 ## Tienda en Línea
 
-_Tienda online_
+_Tienda online UwU_
 
 
 Objetivo: El alumno mostrará los conocimientos adquiridos durante el semestre mediante
