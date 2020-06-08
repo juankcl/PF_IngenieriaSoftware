@@ -4,6 +4,8 @@ import { ToastController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 
 import { MySQLApiService } from '../../services/my-sql-api.service';
+import { StorageService } from '../../services/storage.service';
+
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -12,11 +14,12 @@ import { MySQLApiService } from '../../services/my-sql-api.service';
 })
 export class InicioSesionPage implements OnInit {
 
-  inicioUser: User = { id: null, username: null, password: null, password2: null };
+  inicioUser: User = { id: null, username: null, password: null };
 
   constructor(
     public toastController: ToastController,
-    private registerSQL: MySQLApiService
+    private registerSQL: MySQLApiService,
+    private storageService: StorageService
   ) { }
 
   ngOnInit() {
@@ -26,21 +29,22 @@ export class InicioSesionPage implements OnInit {
     const toast = await this.toastController.create({
       color: color,
       message: text,
-      duration: 2000
+      duration: 1500
     });
     toast.present();
   }
 
   login(form: NgForm) {
     if (form.valid) {
-      console.log(form.value);
+      //console.log(form.value);
       this.registerSQL.login(form.value).subscribe((response: Session) => {
         console.log(response);
         if (response.valid == true) {
-          this.presentToast("Iniciando sesión...", "success");
+          this.presentToast("Sesión iniciada correctamente", "success");
           if (response.admin == true) {
             this.presentToast("Hola admin...", "success");
           }
+          this.storageService.setCurrentSession(response);
         } else {
           this.presentToast("Usuario o contraseña incorrecta", "danger");
         }

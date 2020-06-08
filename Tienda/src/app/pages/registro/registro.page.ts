@@ -12,7 +12,9 @@ import { MySQLApiService } from '../../services/my-sql-api.service';
 })
 export class RegistroPage implements OnInit {
 
-  newUser: User = { id: null, username: null, password: null, password2: null };
+  newUser: User = { id: null, username: null, password: null };
+
+  password2: string = "";
 
   constructor(
     public toastController: ToastController,
@@ -34,7 +36,7 @@ export class RegistroPage implements OnInit {
   createUser(form: NgForm) {
     if (form.valid) {
       if (form.value['password'] == form.value['password2']) {
-        console.log(form.value);
+        //console.log(form.value);
         this.registerSQL.registro(form.value).subscribe((response: Message) =>{
           this.presentToast(response.message, response.type);
         });
