@@ -32,13 +32,17 @@ export class RegistroPage implements OnInit {
   }
 
   createUser(form: NgForm) {
-    if (form.value['password'] == form.value['password2']) {
-      console.log(form.value);
-      this.registerSQL.registro(form.value).subscribe((response: Message) =>{
-        this.presentToast(response.message, response.type);
-      });
+    if (form.valid) {
+      if (form.value['password'] == form.value['password2']) {
+        console.log(form.value);
+        this.registerSQL.registro(form.value).subscribe((response: Message) =>{
+          this.presentToast(response.message, response.type);
+        });
+      } else {
+        this.presentToast("Las contraseñas no coinciden", "danger");
+      }
     } else {
-      this.presentToast("Las contraseñas no coinciden", "danger");
+      this.presentToast("Datos no válidos", "danger");
     }
   }
 }
