@@ -1,9 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>perfil</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{usuario.username}}</ion-card-title>
+    </ion-card-header>
+    <ion-item>
+      <ion-button type="button" (click)="logout()" color="danger">Cerrar sesión </ion-button>
+    </ion-item>
+  </ion-card>
 </ion-content>

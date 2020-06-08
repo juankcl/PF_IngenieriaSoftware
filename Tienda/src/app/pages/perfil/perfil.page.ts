@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { StorageService } from '../../services/storage.service';
+
+import { ToastController } from '@ionic/angular';
+import { User, Session} from '../../services/classes';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +11,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public toastController: ToastController,
+    private storageSer: StorageService
+  ) { }
 
-  ngOnInit() {
+  usuario: User;
+
+  ngOnInit(){
+    this.usuario = this.storageSer.getCurrentUser();
+  }
+  
+  ionViewWillEnter() {
+    this.usuario = this.storageSer.getCurrentUser();
+  }
+
+
+  async presentToast(text: string, color: string = "primary") {
+    const toast = await this.toastController.create({
+      color: color,
+      message: text,
+      duration: 1500
+    });
+    toast.present();
+  }
+
+  logout() {
+    this.presentToast("Cerrando sesión", "danger");
+    this.storageSer.logout();
   }
 
 }
