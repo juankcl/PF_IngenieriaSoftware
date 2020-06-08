@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User, Message, Session } from './classes';
+import { User, Message, Session, Producto, Search } from './classes';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -18,6 +18,10 @@ export class MySQLApiService {
 
   login(user: User): Observable<Session> {
     return this.httpClient.post<Session>(`${this.PHP_API_SERVER}/api/login.php`, user);
+  }
+
+  search(search: Search): Observable<Producto[]> {
+    return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/api/search.php`, search);
   }
 
   // readPolicies(): Observable<Policy[]> {

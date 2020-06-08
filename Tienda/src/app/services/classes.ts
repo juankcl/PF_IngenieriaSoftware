@@ -14,3 +14,16 @@ export class Session {
 	user: User;
 	admin: boolean;
 }
+
+export class Search {
+	id: number;
+	search: string;
+}
+
+export class Producto {
+	id: number;
+	nombre: string;
+	descripcion: string;
+	precio: number;
+	imagenUrl: string;
+}

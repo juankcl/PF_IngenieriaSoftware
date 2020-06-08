@@ -9,10 +9,20 @@ export class StorageService {
 
   private localStorageService;
   private currentSession: Session = null;
+  private busqueda: string = null;
 
   constructor(private router: Router) {
     this.localStorageService = localStorage;
     this.currentSession = this.loadSessionData();
+  }
+
+  buscar(search: string) {
+    this.busqueda = search;
+    this.router.navigateByUrl('/buscar');
+  }
+
+  getBusqueda():string {
+    return this.busqueda;
   }
 
   setCurrentSession(session: Session): void {
