@@ -3,6 +3,8 @@ import { User,Message } from '../../services/classes';
 import { ToastController } from '@ionic/angular';
 import { NgForm } from '@angular/forms';
 
+import { Router } from '@angular/router';
+
 import { MySQLApiService } from '../../services/my-sql-api.service';
 
 @Component({
@@ -17,6 +19,7 @@ export class RegistroPage implements OnInit {
   password2: string = "";
 
   constructor(
+    private _router: Router,
     public toastController: ToastController,
     private registerSQL: MySQLApiService
     ) { }
@@ -39,6 +42,9 @@ export class RegistroPage implements OnInit {
         //console.log(form.value);
         this.registerSQL.registro(form.value).subscribe((response: Message) =>{
           this.presentToast(response.message, response.type);
+          if (response.type == "success") {
+            this._router.navigateByUrl('/inicio-sesion');
+          }
         });
       } else {
         this.presentToast("Las contraseñas no coinciden", "danger");
