@@ -13,8 +13,8 @@ if (isset($postdata) && !empty($postdata)) {
 	$pass = mysqli_real_escape_string($con, trim($request->password));
 
 	// Verificar que exista el usuario
-	$sql_test = "SELECT * FROM usuarios WHERE username='{$username}'";
-	$resultado = mysqli_query($con, $sql_test);
+	$sql_login = "SELECT * FROM usuarios WHERE username='{$username}'";
+	$resultado = mysqli_query($con, $sql_login);
 	// Revisar que solo se haya encontrado uno
 	if (mysqli_num_rows($resultado) == 1) {
 		// Revisar contraseña
