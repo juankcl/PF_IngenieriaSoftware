@@ -54,7 +54,7 @@ export class CarritoPage implements OnInit {
     this.recalcularTotal();
   }
 
-  cambiarCant(value: number, id: number, num: any) {
+  cambiarCant(value: any, id: number, num: any) {
     if (Number(value) > 0 && Number(value) < 10) {
       this.productosCarrito[id].cantidad = Number(value);
       this.storageSer.modificarCarrito(id, this.productosCarrito[id]);
