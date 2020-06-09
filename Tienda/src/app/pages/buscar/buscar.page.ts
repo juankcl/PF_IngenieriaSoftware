@@ -75,4 +75,8 @@ export class BuscarPage implements OnInit {
     });
   }
 
+  agregarCarrito(i: number) {
+    this.storageSer.agregarCarrito(this.productos[i]);
+  }
+
 }
