@@ -1,5 +1,5 @@
 export class User {
-	id: number;
+	userId: number;
 	username: string;
 	password: string;
 }
@@ -31,4 +31,34 @@ export class Producto {
 export class ProductoCarr {
 	producto: Producto;
 	cantidad: number;
+}
+
+export class Pedido {
+	id: number;
+	user_id: number;
+	fecha: Date;
+	total: number;
+}
+
+export class DetallePedido {
+	id: number;
+	pedido_id: number;
+	producto_id: number;
+	cantidad: number;
+}
+
+export class PedidoC {
+	id: number;
+	user_id: number;
+	fecha: Date;
+	total: number;
+	detalles: DetallePedidoP[];
+}
+
+export class DetallePedidoP {
+	id: number;
+	pedido_id: number;
+	producto_id: number;
+	cantidad: number;
+	producto: Producto;
 }

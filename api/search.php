@@ -10,6 +10,7 @@ if (isset($postdata) && !empty($postdata)) {
 
 	$search = mysqli_real_escape_string($con, trim($request->search));
 	$id = mysqli_real_escape_string($con, (float)$request->id);
+	
 	$sql_search = "SELECT * FROM productos WHERE (nombre like '%{$search}%' ) AND id>='{$id}' limit 8";
 	
 	if ($result = mysqli_query($con, $sql_search)) {

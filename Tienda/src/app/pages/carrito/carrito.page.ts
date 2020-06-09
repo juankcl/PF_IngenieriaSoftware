@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Producto, ProductoCarr } from '../../services/classes';
+import { Producto, ProductoCarr, Pedido, DetallePedido, PedidoC } from '../../services/classes';
 import { StorageService } from '../../services/storage.service';
-import { empty } from 'rxjs';
+import { MySQLApiService } from '../../services/my-sql-api.service';
 
 @Component({
   selector: 'app-carrito',
@@ -11,7 +11,10 @@ import { empty } from 'rxjs';
 })
 export class CarritoPage implements OnInit {
 
-  constructor(private storageSer: StorageService) { }
+  constructor(
+    private storageSer: StorageService,
+    private mySql: MySQLApiService
+  ) { }
 
   productosCarrito: ProductoCarr [];
 
@@ -19,6 +22,10 @@ export class CarritoPage implements OnInit {
 
   ngOnInit() {
     this.productosCarrito = this.storageSer.getCarrito();
+    if (this.productosCarrito != null){
+      this.recalcularTotal();
+
+    }
   }
 
   ionViewWillEnter() {
@@ -73,6 +80,47 @@ export class CarritoPage implements OnInit {
       this.total += Number(element.cantidad) * Number(element.producto.precio);
     });
     this.total = Number(this.total.toFixed(2));
+  }
+
+  hacerPedido() {
+    if (this.productosCarrito != null)
+    {
+      if (this.productosCarrito.length > 0) {
+        
+        let pedido = new Pedido;
+        pedido.user_id = this.storageSer.getCurrentSession().user.userId;
+        pedido.total = this.total;
+
+        console.log(pedido);
+
+        // Hacer registro en pedido
+        this.mySql.pedido(pedido).subscribe((response: number) => {
+          let id = response;
+          
+          // Hacer registros de detalles
+          this.productosCarrito.forEach(element => {
+            let dPedido = new DetallePedido;
+            dPedido.pedido_id = id;
+            dPedido.producto_id = element.producto.id;
+            dPedido.cantidad = element.cantidad;
+
+            console.log(dPedido);
+
+            this.mySql.detallePedido(dPedido).subscribe((response: number) => { });
+          });
+          this.storageSer.clearCarrito();
+          this.productosCarrito = null;
+          this.total = 0;
+          this.storageSer.presentToast("Pedido realizado con éxito!", "success");
+
+        });
+
+        
+        return;
+      }
+    }
+    console.log(this.productosCarrito);
+    this.storageSer.presentToast("No hay productos en el carrito", "danger");
   }
 
 }

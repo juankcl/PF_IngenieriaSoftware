@@ -14,7 +14,7 @@ import { MySQLApiService } from '../../services/my-sql-api.service';
 })
 export class RegistroPage implements OnInit {
 
-  newUser: User = { id: null, username: null, password: null };
+  newUser: User = { userId: null, username: null, password: null };
 
   password2: string = "";
 

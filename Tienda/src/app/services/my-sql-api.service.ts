@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User, Message, Session, Producto, Search } from './classes';
+import { User, Message, Session, Producto, Search, Pedido, DetallePedido, PedidoC } from './classes';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -26,6 +26,22 @@ export class MySQLApiService {
   
   random(): Observable<Producto[]> {
     return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/api/random.php`, "random");
+  }
+  
+  pedido(pedido: Pedido): Observable<number> {
+    return this.httpClient.post<number>(`${this.PHP_API_SERVER}/api/pedido.php`, pedido);
+  }
+  
+  detallePedido(dPedido: DetallePedido): Observable<number> {
+    return this.httpClient.post<number>(`${this.PHP_API_SERVER}/api/detalle_pedido.php`, dPedido);
+  }
+  
+  pedidoC(id: number): Observable<PedidoC[]> {
+
+    let aux = new Pedido;
+    aux.user_id = id;
+
+    return this.httpClient.post<PedidoC[]>(`${this.PHP_API_SERVER}/api/get_pedidos.php`, aux);
   }
 
   // readPolicies(): Observable<Policy[]> {

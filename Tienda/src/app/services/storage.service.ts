@@ -78,6 +78,11 @@ export class StorageService {
     }
   }
 
+  clearCarrito() {
+    this.localStorageService.removeItem('carrito');
+    this.carrito = null;
+  }
+
   buscar(search: string) {
     this.busqueda = search;
     this.router.navigateByUrl('/buscar');
@@ -109,8 +114,8 @@ export class StorageService {
 
   removeCurrentSession(): void {
     this.localStorageService.removeItem('currentUser');
-    this.localStorageService.removeItem('carrito');
     this.currentSession = null;
+    this.localStorageService.removeItem('carrito');
     this.carrito = null;
   }
 

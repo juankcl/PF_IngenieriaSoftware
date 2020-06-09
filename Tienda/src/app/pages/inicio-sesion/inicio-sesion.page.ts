@@ -14,7 +14,7 @@ import { StorageService } from '../../services/storage.service';
 })
 export class InicioSesionPage implements OnInit {
 
-  inicioUser: User = { id: null, username: null, password: null };
+  inicioUser: User = { userId: null, username: null, password: null };
 
   constructor(
     public toastController: ToastController,
