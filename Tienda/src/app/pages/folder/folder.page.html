@@ -54,7 +54,7 @@
     <ion-card *ngFor="let articulo of cosas">
       <ion-card-header>
         <ion-avatar class="avatar">
-          <img src="../../../assets/images/perro.jpg" alt="" text-algn>
+          <img src="{{articulo.img}}" alt="" text-algn>
         </ion-avatar>
         <ion-card-title class="Titulo">{{articulo.titulo}}</ion-card-title>
       </ion-card-header>
@@ -77,18 +77,18 @@
 
   <ion-list>
     <h1>Ofertas</h1>
-    <ion-card>
+    <ion-card *ngFor="let articulo of ofertas">
       <ion-card-header>
         <ion-avatar class="avatar">
-          <img src="../../../assets/images/perro.jpg" alt="" text-algn>
+          <img src="{{articulo.img}}" alt="" text-algn>
         </ion-avatar>
-        <ion-card-title class="Titulo">Sapes</ion-card-title><br>
+        <ion-card-title class="Titulo">{{articulo.titulo}}</ion-card-title>
       </ion-card-header>
       <ion-card-content>
         <ion-row class="ion-align-items-center">
           <ion-col size="8">
             <ion-label color="secondary">
-              <b>{{ 10 | currency:'USD' }}</b>
+              <b>{{ articulo.precio | currency:'USD' }}</b>
             </ion-label>
           </ion-col>
           <ion-col size="4" class="ion-text-right">
