@@ -23,6 +23,10 @@ export class MySQLApiService {
   search(search: Search): Observable<Producto[]> {
     return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/api/search.php`, search);
   }
+  
+  random(): Observable<Producto[]> {
+    return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/api/random.php`, "random");
+  }
 
   // readPolicies(): Observable<Policy[]> {
   //   return this.httpClient.get<Policy[]>(`${this.PHP_API_SERVER}/api/read.php`);

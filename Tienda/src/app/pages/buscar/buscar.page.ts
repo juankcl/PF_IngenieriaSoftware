@@ -66,8 +66,6 @@ export class BuscarPage implements OnInit {
     this.mySql.search(this.busq).subscribe((response: Producto[]) => {
       if (response != null) {
         this.productos = this.productos.concat(response);
-        console.log(this.productos);
-        console.log(response);
       } else {
         this.end = true;
       }
@@ -76,7 +74,6 @@ export class BuscarPage implements OnInit {
   }
 
   agregarCarrito(i: number) {
-    console.log("Agregando");
     this.storageSer.agregarCarrito(this.productos[i]);
   }
 
