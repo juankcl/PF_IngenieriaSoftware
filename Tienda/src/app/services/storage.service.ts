@@ -27,6 +27,12 @@ export class StorageService {
   }
 
   agregarCarrito(producto: Producto) {
+    
+    if (this.currentSession == null) {
+      this.presentToast("Necesita iniciar sesión para poder agregar productos a su carrito de compras", "danger");
+      return;
+    }
+
     let aux = new ProductoCarr;
     aux.producto = producto;
     aux.cantidad = 1;
@@ -104,6 +110,7 @@ export class StorageService {
     this.localStorageService.removeItem('currentUser');
     this.localStorageService.removeItem('carrito');
     this.currentSession = null;
+    this.carrito = null;
   }
 
   getCurrentUser(): User {
