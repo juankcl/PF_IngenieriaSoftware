@@ -4,16 +4,16 @@
       <ion-menu-button></ion-menu-button>
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Carrito</ion-title>
+    <ion-title>Carrito </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding main">
-    <ion-card  class="ion-padding">
-      <h1>Total: ${{total}}</h1>
+    <ion-card class="ion-padding" position="floating">
+      <h1>Total:{{total | currency:'USD'}}</h1>
     </ion-card>
-    
+
     <ion-item>
       <ion-list class="list">
         <ion-card *ngFor="let producto of productosCarrito; index as i" class="card">
@@ -21,7 +21,7 @@
             <ion-img src="{{producto.producto.imagenUrl}}" class="imagen"></ion-img>
           </div>
           <div class="right ion-padding">
-            <ion-card-header>
+            <div>
               <ion-card-title class="Titulo">
                 {{producto.producto.nombre}}
               </ion-card-title>
@@ -30,7 +30,7 @@
                   <b>{{ producto.producto.precio | currency:'USD' }}</b>
                 </ion-label>
               </ion-card-subtitle>
-            </ion-card-header>
+            </div>
             <div class="content">
               <ion-input type="number" value="1" min="1" max="9" (ionChange)="cambiarCant(num.value, i ,num)"
                 (keypress)="numberOnlyValidation($event)" #num id="num{{i}}"></ion-input>
@@ -41,6 +41,6 @@
       </ion-list>
     </ion-item>
   </div>
-  
+
 
 </ion-content>

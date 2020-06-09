@@ -44,6 +44,7 @@ export class StorageService {
       this.carrito.forEach(element => {
         if (element.producto.id == producto.id) {
           if (element.cantidad < 8) {
+            this.presentToast("Producto agregado al carrito", "success");
             element.cantidad++;
             this.updateCarrito();
           } else {

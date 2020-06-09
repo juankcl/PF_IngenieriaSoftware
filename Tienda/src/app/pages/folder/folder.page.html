@@ -21,7 +21,7 @@
         <ion-img src="{{producto.imagenUrl}}" class="imagen"></ion-img>
       </div>
       <div class="right ion-padding">
-        <ion-card-header>
+        <div>
           <ion-card-title class="Titulo">
             {{producto.nombre}}
           </ion-card-title>
@@ -30,15 +30,17 @@
               <b>{{ producto.precio | currency:'USD' }}</b>
             </ion-label>
           </ion-card-subtitle>
-        </ion-card-header>
+        </div>
         <div class="content">
           <div>
             {{producto.descripcion}}
           </div>
-          <ion-button fill="" (click)="agregarCarrito(i)" color="success" class="button">
-            <ion-icon name="add"></ion-icon>
-            Agregar al carrito
-          </ion-button>
+          <div class="button">
+            <ion-button fill="" (click)="agregarCarrito(i)" color="success" class="button">
+              <ion-icon name="add"></ion-icon>
+              Agregar al carrito
+            </ion-button>
+          </div>
         </div>
       </div>
     </ion-card>
