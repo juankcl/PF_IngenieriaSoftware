@@ -27,3 +27,8 @@ export class Producto {
 	precio: number;
 	imagenUrl: string;
 }
+
+export class ProductoCarr {
+	producto: Producto;
+	cantidad: number;
+}
