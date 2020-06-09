@@ -21,10 +21,10 @@ export class ImageViewerComponent implements OnInit {
 	productos: Producto[] = [
 		{
 			id: 0,
-			nombre: 'Nier Automata',
-			descripcion: 'Super desc1',
+			nombre: 'RTX 2080 Ti',
+			descripcion: 'Las tarjetas gráficas GeForce RTX están alimentadas por la nueva arquitectura NVIDIA Turing para ofrecerte nuevos niveles increíbles de realismo de juegos, velocidad, eficiencia energética e inmersión.',
 			precio: 19999,
-			imagenUrl: 'https://cdn3.dualshockers.com/wp-content/uploads/2018/12/NieR.jpg'
+			imagenUrl: 'https://media.vandalsports.com/i/2560x1440/9-2018/2018948100_1.jpg'
 		}
 	];
 
@@ -65,19 +65,19 @@ export class ImageViewerComponent implements OnInit {
     */
 		this.aux = {
 			id: 1,
-			nombre: 'Nier Automata',
-			descripcion: 'Super desc1',
+			nombre: 'MSI Gaming Plus AM4',
+			descripcion: 'Satisfacer a los jugadores con lo que realmente necesitan, MPG X570 GAMING PLUS está equipado con diseño de disipador térmico extendido, diseño de disipador de calor Frozr, impulso de núcleo, Lightning Gen4 M.2, accesorio M.2 Shield Frozr, Turbo USB y MSI última Dragon Center. ',
 			precio: 19999,
-			imagenUrl: 'https://cdn3.dualshockers.com/wp-content/uploads/2018/12/NieR.jpg'
+			imagenUrl: 'https://storage-asset.msi.com/global/picture/features/MB/Gaming/B450/B450mGamingPlus/b450m-gaming-plus-storage-3840.jpg'
 		};
 		this.productos.push(this.aux);
 
 		this.aux = {
 			id: 0,
-			nombre: 'Nier Automata',
-			descripcion: 'Super desc1',
+			nombre: 'Razer Blade Stealth 13',
+			descripcion: 'La nueva Razer Blade es una de las laptops para juegos más pequeñas de 15.6 ", con un equilibrio perfecto entre potencia y portabilidad. Hemos rediseñado la galardonada computadora portátil para ofrecer almacenamiento dual y conectividad Gigabit Ethernet en el chasis de aluminio CNC de precisión.',
 			precio: 19999,
-			imagenUrl: 'https://cdn3.dualshockers.com/wp-content/uploads/2018/12/NieR.jpg'
+			imagenUrl: 'https://www.tec.com.pe/wp-content/uploads/2019/06/razer-blade-15-gallery08.jpg'
 		};
 		this.productos.push(this.aux);
 
