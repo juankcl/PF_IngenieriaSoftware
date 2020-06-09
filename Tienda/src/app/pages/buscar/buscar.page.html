@@ -2,15 +2,41 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+      <ion-title>Buscar</ion-title>
     </ion-buttons>
-    <ion-title>Buscar</ion-title>
+    
+    <ion-buttons slot="primary">
+      <app-botones-barra></app-botones-barra>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div id="container">
-    <strong class="capitalize">Buscar</strong>
-    <p>Guapo <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
-        Components</a></p>
-  </div>
+  <ion-item>
+    <ion-list>
+      <ion-card *ngFor="let producto of productos" color="dark">
+        <ion-item>
+          <ion-img [src]="producto.imagenUrl" style="width: 40%; display: block; margin-left: auto; margin-right: auto;"></ion-img>
+        </ion-item>
+        <ion-card-header>
+          <ion-card-title>
+            {{producto.nombre}}
+          </ion-card-title>
+          <ion-card-subtitle>
+            Precio: ${{producto.precio}}
+          </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{producto.descripcion}}
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
+  </ion-item>
+  <ion-item>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>  
+  </ion-item>
 </ion-content>
