@@ -8,32 +8,32 @@ import { Observable } from 'rxjs';
 })
 export class MySQLApiService {
 
-  PHP_API_SERVER = "http://localhost:80";
+  PHP_API_SERVER = "http://losfroger.sytes.net/api/ing";
 
   constructor(private httpClient: HttpClient) { }
 
   registro(new_user: User): Observable<Message> {
-    return this.httpClient.post<Message>(`${this.PHP_API_SERVER}/api/register.php`, new_user);
+    return this.httpClient.post<Message>(`${this.PHP_API_SERVER}/register.php`, new_user);
   }
 
   login(user: User): Observable<Session> {
-    return this.httpClient.post<Session>(`${this.PHP_API_SERVER}/api/login.php`, user);
+    return this.httpClient.post<Session>(`${this.PHP_API_SERVER}/login.php`, user);
   }
 
   search(search: Search): Observable<Producto[]> {
-    return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/api/search.php`, search);
+    return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/search.php`, search);
   }
   
   random(): Observable<Producto[]> {
-    return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/api/random.php`, "random");
+    return this.httpClient.post<Producto[]>(`${this.PHP_API_SERVER}/random.php`, "random");
   }
   
   pedido(pedido: Pedido): Observable<number> {
-    return this.httpClient.post<number>(`${this.PHP_API_SERVER}/api/pedido.php`, pedido);
+    return this.httpClient.post<number>(`${this.PHP_API_SERVER}/pedido.php`, pedido);
   }
   
   detallePedido(dPedido: DetallePedido): Observable<number> {
-    return this.httpClient.post<number>(`${this.PHP_API_SERVER}/api/detalle_pedido.php`, dPedido);
+    return this.httpClient.post<number>(`${this.PHP_API_SERVER}/detalle_pedido.php`, dPedido);
   }
   
   pedidoC(id: number): Observable<PedidoC[]> {
@@ -41,22 +41,6 @@ export class MySQLApiService {
     let aux = new Pedido;
     aux.user_id = id;
 
-    return this.httpClient.post<PedidoC[]>(`${this.PHP_API_SERVER}/api/get_pedidos.php`, aux);
+    return this.httpClient.post<PedidoC[]>(`${this.PHP_API_SERVER}/get_pedidos.php`, aux);
   }
-
-  // readPolicies(): Observable<Policy[]> {
-  //   return this.httpClient.get<Policy[]>(`${this.PHP_API_SERVER}/api/read.php`);
-  // }
-
-  // createPolicy(policy: Policy): Observable<Policy> {
-  //   return this.httpClient.post<Policy>(`${this.PHP_API_SERVER}/api/create.php`, policy);
-  // }
-
-  // updatePolicy(policy: Policy) {
-  //   return this.httpClient.put<Policy>(`${this.PHP_API_SERVER}/api/update.php`, policy);
-  // }
-
-  // deletePolicy(id: number) {
-  //   return this.httpClient.delete<Policy>(`${this.PHP_API_SERVER}/api/delete.php/?id=${id}`);
-  // }
 }
