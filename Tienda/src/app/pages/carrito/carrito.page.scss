@@ -1,3 +1,108 @@
+
 ion-menu-button {
 	color: var(--ion-color-primary);
+}
+
+#container {
+	text-align: center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#container strong {
+	font-size: 20px;
+	line-height: 26px;
+}
+
+#container p {
+	font-size: 16px;
+	line-height: 22px;
+	color: #8c8c8c;
+	margin: 0;
+}
+
+#container a {
+	text-decoration: none;
+}
+
+ion-fab-button {
+	height: 70px;
+	width: 70px;
+}
+
+.list {
+	width: 100%;
+}
+
+.card {
+	margin: 50px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	background-color: var(--ion-toolbar-background);
+
+}
+
+.parteIzq {
+	display: grid;
+	grid-template-columns: 1fr;
+
+}
+
+.content {
+	display: grid;
+	grid-template-rows: 3fr 0.5fr;
+}
+
+.imagen {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.right {
+	display: grid;
+	grid-template-rows: 1fr 2fr;
+}
+
+.cart-icon {
+	font-size: 50px;
+}
+
+.cart-length {
+	color: var(--ion-color-primary);
+	position: absolute;
+	top: 18px;
+	left: 25px;
+	font-weight: 600;
+	font-size: 1em;
+	min-width: 25px;
+	z-index: 10;
+}
+
+.avatar {
+	text-align: start;
+	display: inline-block;
+	width: 30%;
+	height: 8em;
+}
+
+.Titulo {
+	text-align: start;
+	display: inline-block;
+	padding-left: 15px;
+}
+
+.button {
+	justify-self: end;
+	align-self: end;
+}
+
+@media (max-width: 1086px) {
+	.card {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.2fr, 1fr;
+	}
 }

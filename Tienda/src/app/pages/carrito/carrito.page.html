@@ -15,8 +15,30 @@
   </ion-item>
   
   <ion-item>
-    <ion-list>
-      <ion-card *ngFor="let producto of productosCarrito; index as i">
+      <ion-list class="list">
+        <ion-card *ngFor="let producto of productosCarrito; index as i" class="card">
+          <div class="parteIzq">
+            <ion-img src="{{producto.producto.imagenUrl}}" class="imagen"></ion-img>
+          </div>
+          <div class="right ion-padding">
+            <ion-card-header>
+              <ion-card-title class="Titulo">
+                {{producto.producto.nombre}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                <ion-label color="secondary">
+                  <b>{{ producto.producto.precio | currency:'USD' }}</b>
+                </ion-label>
+              </ion-card-subtitle>
+            </ion-card-header>
+            <div class="content">
+              <ion-input type="number" value="1" min="1" max="9" (ionChange)="cambiarCant(num.value, i ,num)"
+                (keypress)="numberOnlyValidation($event)" #num id="num{{i}}"></ion-input>
+              <ion-button type="button" color="danger" (click)="eliminarCarrito(i)">Eliminar</ion-button>
+            </div>
+          </div>
+        </ion-card>
+      <!-- <ion-card *ngFor="let producto of productosCarrito; index as i">
         <ion-item>
           <ion-img [src]="producto.producto.imagenUrl" style="width: 20%; display: block; margin-left: auto; margin-right: auto;">
           </ion-img>
@@ -29,7 +51,7 @@
           <ion-input type="number" value="1" min="1" max="9" (ionChange)="cambiarCant(num.value, i ,num)" (keypress)="numberOnlyValidation($event)" #num id="num{{i}}"></ion-input>
           <ion-button type="button" color="danger" (click)="eliminarCarrito(i)">Eliminar</ion-button>
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
     </ion-list>
   </ion-item>
 

@@ -76,6 +76,7 @@ export class BuscarPage implements OnInit {
   }
 
   agregarCarrito(i: number) {
+    console.log("Agregando");
     this.storageSer.agregarCarrito(this.productos[i]);
   }
 
