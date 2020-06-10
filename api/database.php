@@ -1,19 +1,4 @@
 <?php
-/*
-header("Access-Control-Allow-Origin: *");
-
-$link = 'mysql:host=localhost; dbname=ing_softw';
-$usuario = 'root';
-$pass = 'root';
-
-
-try {
-	// Iniciar sesión en la base de datos
-	$pdo = new PDO($link, $usuario, $pass);
-} catch (PDOException $error) {
-	print "Error: " . $error->getMessage() . "<br>";
-	die();
-}*/
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST, DELETE");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
