@@ -44,7 +44,7 @@ export class CarritoPage implements OnInit {
   }
 
   onClick () {
-    console.log(this.storageSer.getCarrito());
+    //console.log(this.storageSer.getCarrito());
     this.productosCarrito = this.storageSer.getCarrito();
   }
 
@@ -91,7 +91,7 @@ export class CarritoPage implements OnInit {
         pedido.user_id = this.storageSer.getCurrentSession().user.userId;
         pedido.total = this.total;
 
-        console.log(pedido);
+        ////console.log(pedido);
 
         // Hacer registro en pedido
         this.mySql.pedido(pedido).subscribe((response: number) => {
@@ -104,7 +104,7 @@ export class CarritoPage implements OnInit {
             dPedido.producto_id = element.producto.id;
             dPedido.cantidad = element.cantidad;
 
-            console.log(dPedido);
+            ////console.log(dPedido);
 
             this.mySql.detallePedido(dPedido).subscribe((response: number) => { });
           });
@@ -119,7 +119,7 @@ export class CarritoPage implements OnInit {
         return;
       }
     }
-    console.log(this.productosCarrito);
+    //console.log(this.productosCarrito);
     this.storageSer.presentToast("No hay productos en el carrito", "danger");
   }
 

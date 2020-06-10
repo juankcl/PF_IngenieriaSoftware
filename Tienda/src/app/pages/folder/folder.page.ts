@@ -21,7 +21,7 @@ export class FolderPage implements OnInit {
 	ngOnInit() { 
 		this.mySql.random().subscribe((response: Producto[]) => {
 			this.productos = response;
-			console.log(this.productos);
+			//console.log(this.productos);
 		});
 	}
 
@@ -29,7 +29,7 @@ export class FolderPage implements OnInit {
 	ionViewWillEnter() {
 		this.mySql.random().subscribe((response: Producto[]) => {
 			this.productos = response;
-			console.log(this.productos);
+			//console.log(this.productos);
 		});
 	}
 

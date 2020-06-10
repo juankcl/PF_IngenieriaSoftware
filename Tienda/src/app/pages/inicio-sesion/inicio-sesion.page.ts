@@ -38,7 +38,7 @@ export class InicioSesionPage implements OnInit {
     if (form.valid) {
       //console.log(form.value);
       this.registerSQL.login(form.value).subscribe((response: Session) => {
-        console.log(response);
+        //console.log(response);
         if (response.valid == true) {
           this.presentToast("Sesión iniciada correctamente", "success");
           if (response.admin == true) {

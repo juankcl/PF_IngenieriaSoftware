@@ -37,10 +37,10 @@ export class BuscarPage implements OnInit {
 
     this.end = false;
 
-    console.log(this.busq);
+    //console.log(this.busq);
     this.mySql.search(this.busq).subscribe((response: Producto[]) => {
       this.productos = response;
-      console.log(this.productos);
+      //console.log(this.productos);
     });
   }
 
@@ -52,7 +52,7 @@ export class BuscarPage implements OnInit {
 
   loadData(event) {
     setTimeout(() => {
-      console.log('Done');
+      //console.log('Done');
       this.search();
       event.target.complete();
       if (this.end == true) {

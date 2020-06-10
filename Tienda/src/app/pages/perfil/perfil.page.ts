@@ -49,7 +49,7 @@ export class PerfilPage implements OnInit {
 
   verPedidos() {
     this.mySql.pedidoC(this.storageSer.getCurrentSession().user.userId).subscribe((response: PedidoC[]) => {
-      console.log(response);
+      //console.log(response);
       this.pedidos = response;
     });
   }
