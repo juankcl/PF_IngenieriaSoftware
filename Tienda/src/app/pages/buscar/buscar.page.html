@@ -2,22 +2,54 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
+      <ion-title>Buscar</ion-title>
     </ion-buttons>
-    <ion-title>Buscar</ion-title>
+
+    <ion-buttons slot="primary">
+      <app-botones-barra></app-botones-barra>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div id="container">
-    <strong class="capitalize">Buscar</strong>
-    <p>Guapo <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI
-        Components</a></p>
-  </div>
-  <div>
-    <!-- Animated Searchbar -->
-    <ion-searchbar animated showCancelButton="focus" placeholder="Encuentra lo que buscas" (ionChange)="buscar($event)">
-    </ion-searchbar>
+<ion-content [fullscreen]="true">
+  <div class="ion-padding main">
+    <ion-list class="list">
+      <ion-card *ngFor="let producto of productos; index as i" class="card">
+        <div class="parteIzq">
+          <ion-img src="{{producto.imagenUrl}}" class="imagen"></ion-img>
+        </div>
+        <div class="right ion-padding">
+          <div>
+            <ion-card-title class="Titulo">
+              {{producto.nombre}}
+            </ion-card-title>
+            <ion-card-subtitle>
+              <ion-label color="secondary">
+                <b>{{ producto.precio | currency:'USD' }}</b>
+              </ion-label>
+            </ion-card-subtitle>
+          </div>
+          <div class="content">
+            <div>
+              {{producto.descripcion}}
+            </div>
+            <div class="button">
+              <ion-button fill="" (click)="agregarCarrito(i)" color="success">
+                <ion-icon name="add"></ion-icon>
+                Agregar al carrito
+              </ion-button>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+    </ion-list>
 
+    <ion-item>
+      <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+    </ion-item>
   </div>
-  <div></div>
 </ion-content>

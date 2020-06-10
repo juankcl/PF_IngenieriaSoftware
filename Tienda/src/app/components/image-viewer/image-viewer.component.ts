@@ -1,33 +1,34 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { datosJuego } from '../datosJuego';
+import { Producto } from '../../services/classes';
 
 import { AnimationController } from '@ionic/angular';
 
 @Component({
-	selector: 'app-image-viewer',
-	templateUrl: './image-viewer.component.html',
-	styleUrls: [ './image-viewer.component.scss' ]
+  selector: 'app-image-viewer',
+  templateUrl: './image-viewer.component.html',
+  styleUrls: ['./image-viewer.component.scss'],
 })
 export class ImageViewerComponent implements OnInit {
+
 	@ViewChild('image', { read: ElementRef, static: true })
 	image: ElementRef;
 
 	index: number = 0;
 
-	juegoMostrar: datosJuego;
+	productoMostrar: Producto;
 
-	aux: datosJuego;
-	juegos: datosJuego[] = [
+	aux: Producto;
+	productos: Producto[] = [
 		{
 			id: 0,
-			titulo: 'Nier Automata',
-			desc: 'Super desc1',
-			imagen: 'https://cdn3.dualshockers.com/wp-content/uploads/2018/12/NieR.jpg',
-			precio: 999.99
+			nombre: 'RTX 2080 Ti',
+			descripcion: 'Las tarjetas gráficas GeForce RTX están alimentadas por la nueva arquitectura NVIDIA Turing para ofrecerte nuevos niveles increíbles de realismo de juegos, velocidad, eficiencia energética e inmersión.',
+			precio: 19999,
+			imagenUrl: 'https://media.vandalsports.com/i/2560x1440/9-2018/2018948100_1.jpg'
 		}
 	];
 
-	constructor(private animationCtrl: AnimationController) {}
+	constructor(private animationCtrl: AnimationController) { }
 
 	// Animacion cambio de imágenes
 	async animation() {
@@ -40,7 +41,7 @@ export class ImageViewerComponent implements OnInit {
 		const delay = this.animationCtrl
 			.create()
 			.addElement(this.image.nativeElement)
-			.fromTo('src', this.juegoMostrar.imagen, this.juegos[this.index].imagen)
+			.fromTo('src', this.productoMostrar.imagenUrl, this.productos[this.index].imagenUrl)
 			.duration(150);
 
 		const fadein = this.animationCtrl
@@ -50,7 +51,7 @@ export class ImageViewerComponent implements OnInit {
 			.fromTo('opacity', 0, 1);
 
 		await fadeout.play();
-		this.juegoMostrar = this.juegos[this.index];
+		this.productoMostrar = this.productos[this.index];
 		await delay.play();
 		await fadein.play();
 	}
@@ -64,28 +65,28 @@ export class ImageViewerComponent implements OnInit {
     */
 		this.aux = {
 			id: 1,
-			titulo: 'Monster Hunter: World',
-			desc: 'Super desc2',
-			imagen: 'https://www.cgmagonline.com/wp-content/uploads/2018/08/monster-hunter-world-pc-review.jpg',
-			precio: 999.99
+			nombre: 'MSI Gaming Plus AM4',
+			descripcion: 'Satisfacer a los jugadores con lo que realmente necesitan, MPG X570 GAMING PLUS está equipado con diseño de disipador térmico extendido, diseño de disipador de calor Frozr, impulso de núcleo, Lightning Gen4 M.2, accesorio M.2 Shield Frozr, Turbo USB y MSI última Dragon Center. ',
+			precio: 19999,
+			imagenUrl: 'https://storage-asset.msi.com/global/picture/features/MB/Gaming/B450/B450mGamingPlus/b450m-gaming-plus-storage-3840.jpg'
 		};
-		this.juegos.push(this.aux);
+		this.productos.push(this.aux);
 
 		this.aux = {
-			id: 2,
-			titulo: 'Doom Eternal',
-			desc: 'Super desc3',
-			imagen: 'https://i.ytimg.com/vi/NA8tzzWcibk/maxresdefault.jpg',
-			precio: 999.99
+			id: 0,
+			nombre: 'Razer Blade Stealth 13',
+			descripcion: 'La nueva Razer Blade es una de las laptops para juegos más pequeñas de 15.6 ", con un equilibrio perfecto entre potencia y portabilidad. Hemos rediseñado la galardonada computadora portátil para ofrecer almacenamiento dual y conectividad Gigabit Ethernet en el chasis de aluminio CNC de precisión.',
+			precio: 19999,
+			imagenUrl: 'https://www.tec.com.pe/wp-content/uploads/2019/06/razer-blade-15-gallery08.jpg'
 		};
-		this.juegos.push(this.aux);
+		this.productos.push(this.aux);
 
-		this.juegoMostrar = this.juegos[this.index];
+		this.productoMostrar = this.productos[this.index];
 	}
 
 	siguienteJuego() {
 		this.index++;
-		if (this.index > this.juegos.length - 1) {
+		if (this.index > this.productos.length - 1) {
 			this.index = 0;
 		}
 
@@ -95,9 +96,10 @@ export class ImageViewerComponent implements OnInit {
 	anteriorJuego() {
 		this.index--;
 		if (this.index < 0) {
-			this.index = this.juegos.length - 1;
+			this.index = this.productos.length - 1;
 		}
 
 		this.animation();
 	}
+
 }

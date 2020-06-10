@@ -2,25 +2,46 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>Carrito</ion-title>
+    <ion-title>Carrito </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <br>
-  <div>
-    <ion-label>Tu carrito de Compras</ion-label>
+  <div class="ion-padding main">
+    <ion-card class="ion-padding" position="floating">
+      <h1>Total:{{total | currency:'USD'}}</h1>
+      <ion-button type="button" color="success" (click)="hacerPedido()">Realizar pedido</ion-button>
+    </ion-card>
+
+    <ion-item>
+      <ion-list class="list">
+        <ion-card *ngFor="let producto of productosCarrito; index as i" class="card">
+          <div class="parteIzq">
+            <ion-img src="{{producto.producto.imagenUrl}}" class="imagen"></ion-img>
+          </div>
+          <div class="right ion-padding">
+            <div>
+              <ion-card-title class="Titulo">
+                {{producto.producto.nombre}}
+              </ion-card-title>
+              <ion-card-subtitle>
+                <ion-label color="secondary">
+                  <b>{{ producto.producto.precio | currency:'USD' }}</b>
+                </ion-label>
+              </ion-card-subtitle>
+            </div>
+            <div class="content">
+              <ion-input type="number" value="1" min="1" max="9" (ionChange)="cambiarCant(num.value, i ,num)"
+                (keypress)="numberOnlyValidation($event)" #num id="num{{i}}"></ion-input>
+              <ion-button type="button" color="danger" (click)="eliminarCarrito(i)">Eliminar</ion-button>
+            </div>
+          </div>
+        </ion-card>
+      </ion-list>
+    </ion-item>
   </div>
-  <br>
-  <div class="contenido">
-    <ion-list class="compras">
-      <ion-item class="articulo">
-        Articulo 1
-      </ion-item>
-      <ion-item class="articulo">
-        Articulo 2
-      </ion-item>
-    </ion-list>
-  </div>
+
+
 </ion-content>

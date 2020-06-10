@@ -24,3 +24,77 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+ion-toolbar {
+	border-bottom: solid 3px var(--ion-color-secondary);
+}
+
+.list {
+	width: 100%;
+}
+
+.card {
+	margin: 50px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	background-color: var(--ion-toolbar-background);
+	grid-auto-rows: 300px;
+}
+
+.parteIzq {
+	overflow: hidden;
+	display: flex;
+}
+
+.content {
+	display: grid;
+	grid-template-rows: 3fr 0.5fr;
+}
+
+.imagen {
+	object-fit: cover;
+}
+
+.right {
+	display: grid;
+	grid-template-rows: 1fr 2fr;
+}
+
+.cart-icon {
+	font-size: 50px;
+}
+
+.cart-length {
+	color: var(--ion-color-primary);
+	position: absolute;
+	top: 18px;
+	left: 25px;
+	font-weight: 600;
+	font-size: 1em;
+	min-width: 25px;
+	z-index: 10;
+}
+
+.Titulo {
+	text-align: start;
+	display: inline-block;
+	padding-left: 15px;
+}
+
+.button {
+	justify-items: end;
+	align-items: end;
+}
+
+@media (max-width: 1086px) {
+	.card {
+		margin: 10px;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr, 2fr;
+	}
+
+	.right {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+	}
+}
