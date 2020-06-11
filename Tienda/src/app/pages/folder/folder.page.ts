@@ -18,7 +18,8 @@ export class FolderPage implements OnInit {
 			titulo: 'NierAutomata',
 			color: '#444',
 			precio: 32,
-			img: '../../../assets/images/nier.jpg'
+			img:
+				'https://as.com/meristation/imagenes/2020/01/09/noticias/1578560772_330502_1578560826_noticia_normal.jpg'
 		},
 		{
 			titulo: 'PlantVSZombie',
