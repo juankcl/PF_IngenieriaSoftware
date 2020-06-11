@@ -27,7 +27,7 @@ _Aplicacion de Tienda con IONC y Angular_
 
 ## Comenzando 🚀
 
-* **Diagrama Lucid Chart** - [link](https://app.lucidchart.com/invitations/accept/432f0507-41be-4a74-b98b-7515d9b616ae)
+* **Diagrama Lucid Chart** - [link](https://app.lucidchart.com/documents/view/203c05d3-be99-4d03-aaf4-63467cfe295c)
 
 **Actualizar los logs**
 

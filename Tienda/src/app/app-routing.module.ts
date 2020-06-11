@@ -4,12 +4,12 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
 	{
 		path: '',
-		redirectTo: 'folder/Inbox',
+		redirectTo: 'folder/',
 		pathMatch: 'full'
 	},
 	{
 		path: 'folder/:id',
-		loadChildren: () => import('./folder/folder.module').then((m) => m.FolderPageModule)
+		loadChildren: () => import('./pages/folder/folder.module').then((m) => m.FolderPageModule)
 	},
 	{
 		path: 'buscar',
@@ -23,18 +23,30 @@ const routes: Routes = [
 		path: 'carrito',
 		loadChildren: () => import('./pages/carrito/carrito.module').then((m) => m.CarritoPageModule)
 	},
-  {
-    path: 'registro',
-    loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
-  },
-  {
-    path: 'sesion',
-    loadChildren: () => import('./pages/sesion/sesion.module').then( m => m.SesionPageModule)
-  }
-];
+	{
+		path: 'info',
+		loadChildren: () => import('./pages/info/info.module').then(m => m.InfoPageModule)
+	},
+	{
+		path: 'contacto',
+		loadChildren: () => import('./pages/contacto/contacto.module').then(m => m.ContactoPageModule)
+	},
+	{
+		path: 'inicio-sesion',
+		loadChildren: () => import('./pages/inicio-sesion/inicio-sesion.module').then(m => m.InicioSesionPageModule)
+	},
+	{
+		path: 'registro',
+		loadChildren: () => import('./pages/registro/registro.module').then(m => m.RegistroPageModule)
+	},
+	{
+		path: 'perfil',
+		loadChildren: () => import('./pages/perfil/perfil.module').then(m => m.PerfilPageModule)
+	}
+]
 
 @NgModule({
-	imports: [ RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
+	exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

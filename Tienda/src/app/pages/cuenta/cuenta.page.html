@@ -2,13 +2,14 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
+      <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-title>Mi Cuenta</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-content [fullscreen]="true" class="ion-padding">
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="ion-padding main">
     <ion-text>
       <h1>Bienvenido</h1>
       <p>Empezemos por iniciar sesión <br>en tu cuenta.</p>
@@ -34,8 +35,8 @@
         <span class="linea izquierda"></span>
         <span class="linea derecha"></span>
       </div>
-      <ion-button class="registrate-btn" expand="block" href="registro">Regitrate con Email</ion-button>
-      <p class="ingresar">¿Ya eres usuario? <a href="sesion">Iniciar sesion</a></p>
+      <ion-button class="registrate-btn" expand="block" routerLink="/registro">Regitrate con Email</ion-button>
+      <p class="ingresar">¿Ya eres usuario? <a routerLink="/inicio-sesion">Iniciar sesion</a></p>
     </div>
-  </ion-content>
+  </div>
 </ion-content>

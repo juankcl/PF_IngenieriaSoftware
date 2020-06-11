@@ -1,24 +1,24 @@
-
-<div class="image-viewer">
-  <div>
-    <ion-img #image src="{{juegoMostrar.imagen}}" alt="">></ion-img>
-  </div>
-
-  <div class="text ion-padding">
-    <h1 class="title">
-      {{juegoMostrar.titulo}}
-    </h1>
-    <p class="description">
-      {{juegoMostrar.desc}}
-    </p>
-    <div class="arrows">
-      <a class="left-arrow" (click)="anteriorJuego()">
-        <ion-icon name="arrow-back-outline"></ion-icon>
-      </a>
-      <a (click)="siguienteJuego()">
-        <ion-icon name="arrow-forward-outline" class="right-arrow"></ion-icon>
-      </a>
+<ion-card>
+  <div class="image-viewer">
+    <div>
+      <ion-img #image src="{{productoMostrar.imagenUrl}}" alt="">></ion-img>
+    </div>
+  
+    <div class="text ion-padding">
+      <h1 class="title">
+        {{productoMostrar.nombre}}
+      </h1>
+      <p class="description">
+        {{productoMostrar.descripcion}}
+      </p>
+      <div class="arrows">
+        <a class="left-arrow" (click)="anteriorJuego()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </a>
+        <a (click)="siguienteJuego()">
+          <ion-icon name="arrow-forward-outline" class="right-arrow"></ion-icon>
+        </a>
+      </div>
     </div>
   </div>
-</div>
-
+</ion-card>
