@@ -15,31 +15,43 @@ export class FolderPage implements OnInit {
 
 	cosas: Array<any> = [
 		{
-			titulo: 'Perro',
+			titulo: 'NierAutomata',
 			color: '#444',
 			precio: 32,
-			img: '../../../assets/images/perro.jpg'
+			img: '../../../assets/images/nier.jpg'
 		},
 		{
-			titulo: 'Gato',
-			color: '#999',
-			precio: 12,
-			img: '../../../assets/images/gato.jpg'
+			titulo: 'PlantVSZombie',
+			color: '#444',
+			precio: 22,
+			img: '../../../assets/images/planta.png'
 		},
 		{
-			titulo: 'Costal Dog Chau 64kg',
-			color: '#999',
-			precio: 12,
-			img: '../../../assets/images/costal.jpg'
+			titulo: 'Call of Duty',
+			color: '#444',
+			precio: 22,
+			img: '../../../assets/images/duty.jpg'
+		},
+		{
+			titulo: 'Sniper 3D',
+			color: '#444',
+			precio: 22,
+			img: '../../../assets/images/snip.jpg'
+		},
+		{
+			titulo: 'GTA 5',
+			color: '#444',
+			precio: 22,
+			img: '../../../assets/images/gta.jpg'
 		}
 	];
 
 	ofertas: Array<any> = [
 		{
-			titulo: 'Costal Dog Chau 32kg',
+			titulo: 'Naruto',
 			color: '#999',
 			precio: 12,
-			img: '../../../assets/images/costal.jpg'
+			img: '../../../assets/images/naruto.jpg'
 		}
 	];
 
