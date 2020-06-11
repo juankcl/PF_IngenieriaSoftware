@@ -8,10 +8,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container" class="ion-padding main">
+  <div id="container" class="ion-padding " style="display: block;">
     <app-image-viewer></app-image-viewer>
+  </div>
+  <div id="container" class="ion-padding " style="display: block; margin-top: 600px;">
     <h1>
-      Ofertas MIO
+      Articulos
     </h1>
     <ion-list>
       <ion-card *ngFor="let articulo of cosas">
@@ -44,7 +46,7 @@
       <ion-card *ngFor="let articulo of ofertas">
         <ion-card-header>
           <ion-avatar class="avatar">
-            <img src="{{articulo.img}}" alt="" text-algn>
+            <img style="" src="{{articulo.img}}" alt="" text-algn>
           </ion-avatar>
           <ion-card-title class="Titulo">{{articulo.titulo}}</ion-card-title>
         </ion-card-header>
