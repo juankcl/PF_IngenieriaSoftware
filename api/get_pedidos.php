@@ -12,7 +12,7 @@ if (isset($postdata) && !empty($postdata)) {
 	$user = 25;
 	
 	
-$sql_get = "SELECT * FROM pedidos WHERE user_id={$user_id}";
+$sql_get = "SELECT * FROM pedidos WHERE user_id={$user_id} ORDER BY fecha DESC";
 	// ORDER BY fecha ASC limit 8
 	if ($result = mysqli_query($con, $sql_get)) {
 		$i = 0;

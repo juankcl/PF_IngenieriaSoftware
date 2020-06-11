@@ -6,7 +6,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', 'root');
-define('DB_NAME', 'ing_softw');
+define('DB_NAME', 'computo_nube');
 
 function connect()
 {

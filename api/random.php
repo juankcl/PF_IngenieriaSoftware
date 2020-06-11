@@ -6,7 +6,7 @@ $postdata = file_get_contents("php://input");
 
 if (isset($postdata) && !empty($postdata)) {
 
-	$sql_search = "SELECT * FROM productos ORDER BY RAND()LIMIT 3";
+	$sql_search = "SELECT * FROM productos ORDER BY RAND()LIMIT 8";
 
 	if ($result = mysqli_query($con, $sql_search)) {
 		$i = 0;
