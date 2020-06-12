@@ -21,10 +21,10 @@ export class ImageViewerComponent implements OnInit {
 	productos: Producto[] = [
 		{
 			id: 0,
-			nombre: 'RTX 2080 Ti',
-			descripcion: 'Las tarjetas gráficas GeForce RTX están alimentadas por la nueva arquitectura NVIDIA Turing para ofrecerte nuevos niveles increíbles de realismo de juegos, velocidad, eficiencia energética e inmersión.',
+			nombre: 'Red Dead Redemption 2',
+			descripcion: 'Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era.',
 			precio: 19999,
-			imagenUrl: 'https://media.vandalsports.com/i/2560x1440/9-2018/2018948100_1.jpg'
+			imagenUrl: 'http://images.pushsquare.com/8d4d27382066d/red-dead-redemption-2-bully-reference.original.jpg'
 		}
 	];
 
@@ -65,19 +65,19 @@ export class ImageViewerComponent implements OnInit {
     */
 		this.aux = {
 			id: 1,
-			nombre: 'MSI Gaming Plus AM4',
-			descripcion: 'Satisfacer a los jugadores con lo que realmente necesitan, MPG X570 GAMING PLUS está equipado con diseño de disipador térmico extendido, diseño de disipador de calor Frozr, impulso de núcleo, Lightning Gen4 M.2, accesorio M.2 Shield Frozr, Turbo USB y MSI última Dragon Center. ',
+			nombre: 'DOOM Eternal',
+			descripcion: 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones para detener la destrucción definitiva de la humanidad. No le tienen miedo a nada... salvo a ti.',
 			precio: 19999,
-			imagenUrl: 'https://storage-asset.msi.com/global/picture/features/MB/Gaming/B450/B450mGamingPlus/b450m-gaming-plus-storage-3840.jpg'
+			imagenUrl: 'https://media.playstation.com/is/image/SCEA/doom-eternal-gateway-arena-screen-01-ps4-us-15jul19?$native_nt$'
 		};
 		this.productos.push(this.aux);
 
 		this.aux = {
 			id: 0,
-			nombre: 'Razer Blade Stealth 13',
-			descripcion: 'La nueva Razer Blade es una de las laptops para juegos más pequeñas de 15.6 ", con un equilibrio perfecto entre potencia y portabilidad. Hemos rediseñado la galardonada computadora portátil para ofrecer almacenamiento dual y conectividad Gigabit Ethernet en el chasis de aluminio CNC de precisión.',
+			nombre: 'Monster Hunter: World',
+			descripcion: '¡Bienvenidos a un nuevo mundo! En Monster Hunter: World, la última entrega de la serie, podrás disfrutar de la mejor experiencia de juego, usando todos los recursos a tu alcance para acechar monstruos en un nuevo mundo rebosante de emociones y sorpresas.',
 			precio: 19999,
-			imagenUrl: 'https://www.tec.com.pe/wp-content/uploads/2019/06/razer-blade-15-gallery08.jpg'
+			imagenUrl: 'https://ramenparados.com/wp-content/uploads/2018/06/Monster-Hunter-World-106.jpg'
 		};
 		this.productos.push(this.aux);
 
