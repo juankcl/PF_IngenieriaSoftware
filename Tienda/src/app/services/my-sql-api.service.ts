@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class MySQLApiService {
 
-  PHP_API_SERVER = "http://losfroger.sytes.net/api/computo";
+  PHP_API_SERVER = "https://losfroger.sytes.net/api/computo";
 
   constructor(private httpClient: HttpClient) { }
 
